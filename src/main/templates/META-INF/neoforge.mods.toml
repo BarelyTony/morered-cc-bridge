@@ -1,0 +1,71 @@
+license="${mod_license}"
+
+[[mods]]
+modId="${mod_id}"
+version="${mod_version}"
+displayName="${mod_name}"
+authors="barelytony"
+# Path is relative to the jar root, i.e. src/main/resources/.
+logoFile="redcc-bridge.png"
+credits='''
+This mod is only glue. The actual work belongs to other people:
+
+More Red, and the Ex Machina signal graph framework it runs on, by Commoble (MIT).
+CC: Tweaked by Daniel Ratcliffe, Aaron Mills and SquidDev, originally created by
+Daniel Ratcliffe (@DanTwoHundred).
+
+The original More Red x CC:Tweaked Compat, which this rebuild replaces for 26.1.2,
+by YuRaNnNzZZ (MIT) - https://github.com/YuRaNnNzZZ/More-Red-CCT-Compat
+'''
+description='''
+Bridges More Red's bundled cables to CC: Tweaked's bundled redstone API, so that computers
+can read and write bundled cable signals with redstone.getBundledInput / setBundledOutput.
+
+Since the More Red 1.22 rewrite, cable connectivity is handled by Ex Machina's Signal Graph
+rather than a capability, so this mod registers a signal component for CC computers on each
+of the sixteen colour channels and translates between that graph and CC's 16-bit bundled mask.
+'''
+
+[[dependencies.${mod_id}]]
+    modId="neoforge"
+    type="required"
+    # Any 26.1.2 build, not specifically the one this was compiled against - there is nothing
+    # here that needs the newest patch, and pinning to it would refuse to load on 26.1.2.90.
+    versionRange="[26.1.2,26.2)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="minecraft"
+    type="required"
+    versionRange="${minecraft_version_range}"
+    ordering="NONE"
+    side="BOTH"
+
+# The bundled redstone API we expose signals through.
+[[dependencies.${mod_id}]]
+    modId="computercraft"
+    type="required"
+    reason="Provides the bundled redstone API this mod bridges to."
+    versionRange="[1.118,)"
+    ordering="AFTER"
+    side="BOTH"
+
+# The signal graph framework that actually owns wire/cable connectivity as of MC 1.22+.
+# We must load AFTER it so its registries exist when we register our signal component type.
+[[dependencies.${mod_id}]]
+    modId="exmachina"
+    type="required"
+    reason="Owns the signal graph that More Red cables connect through."
+    versionRange="[26.1,26.2)"
+    ordering="AFTER"
+    side="BOTH"
+
+# The cables themselves. Required because without them this mod has nothing to bridge.
+[[dependencies.${mod_id}]]
+    modId="morered"
+    type="required"
+    reason="Provides the bundled cables this mod bridges to."
+    versionRange="[26.1,26.2)"
+    ordering="AFTER"
+    side="BOTH"

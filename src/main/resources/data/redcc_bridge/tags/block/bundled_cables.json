@@ -1,0 +1,24 @@
+{
+	"replace": false,
+	"values": [
+		{ "id": "morered:bundled_cable", "required": false },
+		{ "id": "morered:cable_junction", "required": false },
+		{ "id": "morered:cable_relay", "required": false },
+		{ "id": "morered:white_cable", "required": false },
+		{ "id": "morered:orange_cable", "required": false },
+		{ "id": "morered:magenta_cable", "required": false },
+		{ "id": "morered:light_blue_cable", "required": false },
+		{ "id": "morered:yellow_cable", "required": false },
+		{ "id": "morered:lime_cable", "required": false },
+		{ "id": "morered:pink_cable", "required": false },
+		{ "id": "morered:gray_cable", "required": false },
+		{ "id": "morered:light_gray_cable", "required": false },
+		{ "id": "morered:cyan_cable", "required": false },
+		{ "id": "morered:purple_cable", "required": false },
+		{ "id": "morered:blue_cable", "required": false },
+		{ "id": "morered:brown_cable", "required": false },
+		{ "id": "morered:green_cable", "required": false },
+		{ "id": "morered:red_cable", "required": false },
+		{ "id": "morered:black_cable", "required": false }
+	]
+}

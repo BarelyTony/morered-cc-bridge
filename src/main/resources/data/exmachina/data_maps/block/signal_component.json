@@ -1,0 +1,23 @@
+{
+	"replace": false,
+	"values": {
+		"computercraft:computer_normal": {
+			"type": "redcc_bridge:computer"
+		},
+		"computercraft:computer_advanced": {
+			"type": "redcc_bridge:computer"
+		},
+		"computercraft:computer_command": {
+			"type": "redcc_bridge:computer"
+		},
+		"computercraft:turtle_normal": {
+			"type": "redcc_bridge:computer"
+		},
+		"computercraft:turtle_advanced": {
+			"type": "redcc_bridge:computer"
+		},
+		"computercraft:redstone_relay": {
+			"type": "redcc_bridge:computer"
+		}
+	}
+}
